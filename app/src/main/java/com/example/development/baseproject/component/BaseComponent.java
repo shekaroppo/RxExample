@@ -23,4 +23,6 @@ public interface BaseComponent {
          * ExampleComponent is added to BaseComponent in ExampleActivity
          */
         ExampleComponent plus(ExampleModule exampleModule);
+
+    int getGreeting();
 }

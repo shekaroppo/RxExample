@@ -1,7 +1,5 @@
 package com.example.development.baseproject.module;
 
-import android.app.Application;
-
 import com.example.development.baseproject.BaseApplication;
 
 import dagger.Module;
@@ -22,5 +20,10 @@ public class BaseModule {
     @Provides
     BaseApplication provideBaseApplication() {
         return application;
+    }
+
+    @Provides
+    int provideGreeting() {
+        return 2;
     }
 }
