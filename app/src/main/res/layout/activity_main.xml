@@ -1,11 +1,105 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    tools:context=".MainActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:background="@color/abc_search_url_text_normal"
+            android:text="@string/basic" />
+        <Button
+            android:id="@+id/create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create" />
+        <Button
+            android:id="@+id/action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action" />
+        <Button
+            android:id="@+id/lambda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lambda" />
+        <Button
+            android:id="@+id/chaining"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chaining" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:background="@color/abc_search_url_text_normal"
+            android:text="@string/lifecycle" />
+        <Button
+            android:id="@+id/leaking_subscription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/leaking_subscription" />
+
+        <Button
+            android:id="@+id/leaking_subscription_fixed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/leaking_subscription_fixed" />
+
+        <Button
+            android:id="@+id/lifecycle_observable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lifecycle_observable" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:background="@color/abc_search_url_text_normal"
+            android:text="@string/operators" />
+
+        <Button
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/map" />
+        <Button
+            android:id="@+id/map_emitting_diffrent_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/map_emitting_diffrent_type" />
+        <Button
+            android:id="@+id/from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/from" />
+        <Button
+            android:id="@+id/buffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/buffer" />
+        <Button
+            android:id="@+id/debounce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/debounce" />
+    </LinearLayout>
+</ScrollView>
