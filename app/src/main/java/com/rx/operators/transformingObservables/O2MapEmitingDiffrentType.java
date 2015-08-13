@@ -1,4 +1,4 @@
-package com.rx.operators;
+package com.rx.operators.transformingObservables;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -9,12 +9,13 @@ import com.rx.BaseActivity;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
  * Created by Sekhar on 4/3/15.
  */
-public class O1Map extends BaseActivity {
+public class O2MapEmitingDiffrentType extends BaseActivity {
 
     private TextView mTextView;
 
@@ -26,8 +27,13 @@ public class O1Map extends BaseActivity {
         Observable.just("Hello World")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(s -> s + "! Awesome")
-                .subscribe(s -> setUI(s));
+                .map(new Func1<String, Integer>() {
+                    @Override
+                    public Integer call(String s) {
+                        return s.hashCode();
+                    }
+                })
+                .subscribe(s -> setUI(Integer.toString(s)));
     }
 
     private void setUI(String s) {

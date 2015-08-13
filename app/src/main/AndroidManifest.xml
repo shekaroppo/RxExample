@@ -24,12 +24,14 @@
         <activity android:name=".basic.RxAndroidPart4UsingChaining" />
         <activity android:name=".lifecycle.LeakingActivity" />
         <activity android:name=".lifecycle.LifecycleActivity" />
-        <activity android:name=".operators.O1Map" />
-        <activity android:name=".operators.O2MapEmitingDiffrentType" />
+        <activity android:name=".operators.transformingObservables.O1Map" />
+        <activity android:name=".operators.transformingObservables.O2MapEmitingDiffrentType" />
         <activity android:name=".operators.O3From" />
         <activity android:name=".operators.O4Buffers" />
         <activity android:name=".operators.O5Debounce" />
         <activity android:name=".network.RetrofitActivity" />
+        <activity android:name=".operators.transformingObservables.FlatmapVsConcatmap"
+            android:label="@string/flatmap_concatmap"/>
     </application>
 
 </manifest>

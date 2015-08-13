@@ -101,6 +101,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/debounce" />
+        <Button
+            android:id="@+id/flatmap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/flatmap_concatmap" />
 
         <TextView
             android:layout_width="match_parent"

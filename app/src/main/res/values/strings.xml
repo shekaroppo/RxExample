@@ -25,8 +25,25 @@
     <string name="from">From</string>
     <string name="buffer">Buffer</string>
     <string name="debounce">Debounce</string>
+    <string name="flatmap_concatmap">flatMap() vs concatMap()</string>
 
     <!--Network Strings-->
     <string name="network">Network</string>
     <string name="retrofit">Retrofit</string>
+
+
+    <string name="btn_text_flat_map">Observable.flatMap()</string>
+    <string name="btn_text_concat_map">Observable.concatMap()</string>
+    <string name="tv_label_original_order">Original stream order:\u0020</string>
+    <string name="tv_label_flatMap">flatMap():\u0020</string>
+    <string name="tv_label_flatMap_msg">Doesn\'t take care of the order</string>
+    <string name="tv_label_flatMap_result">Result:\u0020</string>
+    <string name="tv_label_concatMap">concatMap():\u0020</string>
+    <string name="tv_label_concatMap_msg">Take care of the order</string>
+    <string name="tv_label_concatMap_result">Result:\u0020</string>
+
+
+    <string name="string_content_description">Non accessible view</string>
+    <string name="string_sample_observable_transformation">See the difference between flatMap() and concatMap() whereas one take care of the order and the other does not.</string>
+
 </resources>

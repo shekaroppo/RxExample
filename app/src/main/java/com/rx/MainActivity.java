@@ -13,8 +13,9 @@ import com.rx.dagger.module.DependenciesExampleModule;
 import com.rx.lifecycle.LeakingActivity;
 import com.rx.lifecycle.LifecycleActivity;
 import com.rx.network.RetrofitActivity;
-import com.rx.operators.O1Map;
-import com.rx.operators.O2MapEmitingDiffrentType;
+import com.rx.operators.transformingObservables.FlatmapVsConcatmap;
+import com.rx.operators.transformingObservables.O1Map;
+import com.rx.operators.transformingObservables.O2MapEmitingDiffrentType;
 import com.rx.operators.O3From;
 import com.rx.operators.O4Buffers;
 import com.rx.operators.O5Debounce;
@@ -94,5 +95,10 @@ public class MainActivity extends BaseActivity {
     @OnClick(R.id.retrofit)
     void retrofit() {
         startActivity(new Intent(this, RetrofitActivity.class));
+    }
+
+    @OnClick(R.id.flatmap)
+    void flatmap() {
+        startActivity(new Intent(this, FlatmapVsConcatmap.class));
     }
 }
