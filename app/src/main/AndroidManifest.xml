@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.rx.activity.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,17 +18,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.basic.RxAndroidPart1" />
-        <activity android:name=".activity.basic.RxAndroidPart2UsingAction1" />
-        <activity android:name=".activity.basic.RxAndroidPart3UsingLambda" />
-        <activity android:name=".activity.basic.RxAndroidPart4UsingChaining" />
-        <activity android:name=".activity.lifecycle.LeakingActivity" />
-        <activity android:name=".activity.lifecycle.LifecycleActivity" />
-        <activity android:name=".activity.operators.O1Map" />
-        <activity android:name=".activity.operators.O2MapEmitingDiffrentType" />
-        <activity android:name=".activity.operators.O3From" />
-        <activity android:name=".activity.operators.O4Buffers" />
-        <activity android:name=".activity.operators.O5Debounce" />
+        <activity android:name=".basic.RxAndroidPart1" />
+        <activity android:name=".basic.RxAndroidPart2UsingAction1" />
+        <activity android:name=".basic.RxAndroidPart3UsingLambda" />
+        <activity android:name=".basic.RxAndroidPart4UsingChaining" />
+        <activity android:name=".lifecycle.LeakingActivity" />
+        <activity android:name=".lifecycle.LifecycleActivity" />
+        <activity android:name=".operators.O1Map" />
+        <activity android:name=".operators.O2MapEmitingDiffrentType" />
+        <activity android:name=".operators.O3From" />
+        <activity android:name=".operators.O4Buffers" />
+        <activity android:name=".operators.O5Debounce" />
+        <activity android:name=".network.RetrofitActivity" />
     </application>
 
 </manifest>

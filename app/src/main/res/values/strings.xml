@@ -1,25 +1,32 @@
 <resources>
     <string name="app_name">RxExample</string>
-
     <string name="action_settings">Settings</string>
 
+    <!--Basic Strings-->
     <string name="basic">Basic</string>
-    <string name="lifecycle">Lifecycle</string>
-    <string name="operators">Operators</string>
-
     <string name="create">Create</string>
     <string name="action">Action1</string>
     <string name="lambda">Lambda</string>
     <string name="chaining">Chaining</string>
 
+    <!--Lifecycle Strings-->
+    <string name="lifecycle">Lifecycle</string>
     <string name="lifecycle_observable">RxLifecycle</string>
     <string name="leaking_subscription">Leaking Subscription</string>
     <string name="leaking_subscription_fixed">Leaking Subscription (Fixed)</string>
     <string name="explanation_leak">This activity should leak when you go back.</string>
+     <string name="explanation_lifecycle">This activity should always auto-unsubscribe due to
+        RxLifecycle\'s bindToLifecycle().</string>
 
+    <!--Operators Strings-->
+    <string name="operators">Operators</string>
     <string name="map">Map</string>
     <string name="map_emitting_diffrent_type">Map Emitting Different Type</string>
     <string name="from">From</string>
     <string name="buffer">Buffer</string>
     <string name="debounce">Debounce</string>
+
+    <!--Network Strings-->
+    <string name="network">Network</string>
+    <string name="retrofit">Retrofit</string>
 </resources>

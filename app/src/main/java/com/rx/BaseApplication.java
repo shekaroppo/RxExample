@@ -3,9 +3,9 @@ package com.rx;
 import android.app.Application;
 import android.content.Context;
 
-import com.rx.component.BaseComponent;
-import com.rx.component.DaggerBaseComponent;
-import com.rx.module.BaseModule;
+import com.rx.dagger.component.BaseComponent;
+import com.rx.dagger.component.DaggerBaseComponent;
+import com.rx.dagger.module.BaseModule;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
