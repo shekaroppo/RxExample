@@ -1,104 +1,136 @@
 package com.rx;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.view.MenuItem;
+import android.view.View;
 
-import com.rx.basic.RxAndroidPart1;
-import com.rx.basic.RxAndroidPart2UsingAction1;
-import com.rx.basic.RxAndroidPart3UsingLambda;
-import com.rx.basic.RxAndroidPart4UsingChaining;
-import com.rx.dagger.component.BaseComponent;
-import com.rx.dagger.component.DaggerDependenciesExampleComponent;
-import com.rx.dagger.module.DependenciesExampleModule;
-import com.rx.lifecycle.LeakingActivity;
-import com.rx.lifecycle.LifecycleActivity;
-import com.rx.network.RetrofitActivity;
-import com.rx.operators.transformingObservables.FlatmapVsConcatmap;
-import com.rx.operators.transformingObservables.O1Map;
-import com.rx.operators.transformingObservables.O2MapEmitingDiffrentType;
-import com.rx.operators.O3From;
-import com.rx.operators.O4Buffers;
-import com.rx.operators.O5Debounce;
+import com.example.development.androidmsample.fragments.BaseFragment;
+import com.example.development.androidmsample.fragments.PercentRelativeLayoutFragment;
+import com.example.development.androidmsample.fragments.TabLayoutFragment;
+import com.example.development.androidmsample.fragments.ToolbarFragment;
+import com.example.development.androidmsample.utils.Navigator;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-/**
- * Created by Shekar on 7/10/15.
- */
-public class MainActivity extends BaseActivity {
+public class MainActivity extends AppCompatActivity implements DrawerLayout.DrawerListener
+        , NavigationView.OnNavigationItemSelectedListener {
+
+    @Bind(R.id.drawer_layout)
+    DrawerLayout mDrawerLayout;
+
+    @Bind(R.id.navigation_view)
+    NavigationView mNavigationView;
+
+
+    private ActionBarDrawerToggle mDrawerToggle;
+    private int mCurrentMenuItem;
+    private static Navigator mNavigator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.test);
         ButterKnife.bind(this);
-        BaseComponent component = BaseApplication.getComponent(this);
-        DaggerDependenciesExampleComponent.builder()
-                .dependenciesExampleModule(new DependenciesExampleModule())
-                .baseComponent(component)
-                .build().inject(this);
+        initNavigator();
+        setupNavDrawer();
+        if(savedInstanceState==null){
+            setRootFragment(ToolbarFragment.newInstance());
+        }
     }
 
-    @OnClick(R.id.create)
-    void create() {
-        startActivity(new Intent(this, RxAndroidPart1.class));
-    }
-    @OnClick(R.id.action)
-    void action() {
-        startActivity(new Intent(this, RxAndroidPart2UsingAction1.class));
-    }
-    @OnClick(R.id.lambda)
-    void lambda() {
-        startActivity(new Intent(this, RxAndroidPart3UsingLambda.class));
-    }
-    @OnClick(R.id.chaining)
-    void chaining() {
-        startActivity(new Intent(this, RxAndroidPart4UsingChaining.class));
+    @Override
+    protected void onResumeFragments() {
+        super.onResumeFragments();
     }
 
-
-    @OnClick(R.id.leaking_subscription)
-    void leakSubscription() {
-        startActivity(LeakingActivity.createIntent(this, false));
-    }
-    @OnClick(R.id.leaking_subscription_fixed)
-    void leakSubscriptionWithFix() {
-        startActivity(LeakingActivity.createIntent(this, true));
-    }
-    @OnClick(R.id.lifecycle_observable)
-    void lifecycleObservable() {
-        startActivity(new Intent(this, LifecycleActivity.class));
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
     }
 
-
-    @OnClick(R.id.map)
-    void map() {
-        startActivity(new Intent(this, O1Map.class));
-    }
-    @OnClick(R.id.map_emitting_diffrent_type)
-    void mapEmittingDiffrentType() {
-        startActivity(new Intent(this, O2MapEmitingDiffrentType.class));}
-    @OnClick(R.id.from)
-    void from() {
-        startActivity(new Intent(this, O3From.class));
-    }
-    @OnClick(R.id.buffer)
-    void buffer() {
-        startActivity(new Intent(this, O4Buffers.class));
-    }
-    @OnClick(R.id.debounce)
-    void debounce() {
-        startActivity(new Intent(this, O5Debounce.class));
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
-    @OnClick(R.id.retrofit)
-    void retrofit() {
-        startActivity(new Intent(this, RetrofitActivity.class));
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        mDrawerToggle.syncState();
     }
 
-    @OnClick(R.id.flatmap)
-    void flatmap() {
-        startActivity(new Intent(this, FlatmapVsConcatmap.class));
+    private void initNavigator() {
+        if (mNavigator != null) return;
+        mNavigator = new Navigator(getSupportFragmentManager(), R.id.container);
+    }
+
+    private void setRootFragment(BaseFragment fragment) {
+        mNavigator.setRootFragment(fragment);
+        mDrawerLayout.closeDrawers();
+    }
+
+    private void setupNavDrawer() {
+        mDrawerLayout.setDrawerListener(this);
+        mDrawerToggle = new ActionBarDrawerToggle(this
+                , mDrawerLayout
+                , null
+                , R.string.navigation_drawer_open
+                , R.string.navigation_drawer_close);
+        mDrawerToggle.syncState();
+        mNavigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public void onDrawerSlide(View drawerView, float slideOffset) {
+        mDrawerToggle.onDrawerSlide(drawerView, slideOffset);
+    }
+
+    @Override
+    public void onDrawerOpened(View drawerView) {
+        mDrawerToggle.onDrawerOpened(drawerView);
+    }
+
+    public void openDrawer(){
+        mDrawerLayout.openDrawer(Gravity.LEFT);
+    }
+
+    @Override
+    public void onDrawerClosed(View drawerView) {
+        mDrawerToggle.onDrawerClosed(drawerView);
+    }
+
+    @Override
+    public void onDrawerStateChanged(int newState) {
+        mDrawerToggle.onDrawerStateChanged(newState);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        int id = menuItem.getItemId();
+        if (id == mCurrentMenuItem) {
+            mDrawerLayout.closeDrawers();
+            return false;
+        }
+        switch (id) {
+            case R.id.toolbarLayout:
+                setRootFragment(ToolbarFragment.newInstance());
+                break;
+            case R.id.tabLayout:
+                setRootFragment(TabLayoutFragment.newInstance());
+                break;
+            case R.id.percentRelativeLayout:
+                setRootFragment(PercentRelativeLayoutFragment.newInstance());
+                break;
+        }
+        mCurrentMenuItem = id;
+        menuItem.setChecked(true);
+        return false;
     }
 }

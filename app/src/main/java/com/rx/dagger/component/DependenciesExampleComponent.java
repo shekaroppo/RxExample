@@ -1,6 +1,6 @@
 package com.rx.dagger.component;
 
-import com.rx.MainActivity;
+import com.rx.TestActivity;
 import com.rx.dagger.module.DependenciesExampleModule;
 import com.rx.dagger.scope.ActivityScope;
 
@@ -21,5 +21,5 @@ public interface DependenciesExampleComponent {
      * inject is used here to make RetrofitActivity aware
      * of Injectable elements available in graph, This is called in RetrofitActivity in onCreate
      */
-    public void inject(MainActivity exampleActivity);
+    public void inject(TestActivity exampleActivity);
 }

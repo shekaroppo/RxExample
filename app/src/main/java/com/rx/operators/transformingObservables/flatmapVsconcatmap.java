@@ -39,7 +39,7 @@ public class FlatmapVsConcatmap  extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.rx_flatmap);
+        setContentView(R.layout.rx_flatmap_vs_concatmap);
         ButterKnife.bind(this);
         jobExecutor = JobExecutor.getInstance();
         populateData();

@@ -10,7 +10,6 @@
     <string name="chaining">Chaining</string>
 
     <!--Lifecycle Strings-->
-    <string name="lifecycle">Lifecycle</string>
     <string name="lifecycle_observable">RxLifecycle</string>
     <string name="leaking_subscription">Leaking Subscription</string>
     <string name="leaking_subscription_fixed">Leaking Subscription (Fixed)</string>
@@ -45,5 +44,9 @@
 
     <string name="string_content_description">Non accessible view</string>
     <string name="string_sample_observable_transformation">See the difference between flatMap() and concatMap() whereas one take care of the order and the other does not.</string>
+
+
+    <string name="drawer.Operators">Operators</string>
+    <string name="drawer.Lifecycle">Lifecycle</string>
 
 </resources>
