@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:name="com.rx.BaseApplication"
+        android:name=".common.app.BaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/rx"
         android:label="@string/app_name"
@@ -18,19 +18,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".basic.RxAndroidPart1" />
-        <activity android:name=".basic.RxAndroidPart2UsingAction1" />
-        <activity android:name=".basic.RxAndroidPart3UsingLambda" />
-        <activity android:name=".basic.RxAndroidPart4UsingChaining" />
-        <activity android:name=".lifecycle.LeakingActivity" />
-        <activity android:name=".lifecycle.LifecycleActivity" />
-        <activity android:name=".operators.transformingObservables.O1Map" />
-        <activity android:name=".operators.transformingObservables.O2MapEmitingDiffrentType" />
-        <activity android:name=".operators.O3From" />
-        <activity android:name=".operators.O4Buffers" />
-        <activity android:name=".operators.O5Debounce" />
-        <activity android:name=".network.RetrofitActivity" />
-        <activity android:name=".operators.transformingObservables.FlatmapVsConcatmap"
+        <activity android:name=".guide.basic.RxAndroidPart1" />
+        <activity android:name=".guide.basic.RxAndroidPart2UsingAction1" />
+        <activity android:name=".guide.basic.RxAndroidPart3UsingLambda" />
+        <activity android:name=".guide.basic.RxAndroidPart4UsingChaining" />
+        <activity android:name=".guide.lifecycle.LeakingActivity" />
+        <activity android:name=".guide.lifecycle.LifecycleActivity" />
+        <activity android:name=".guide.operators.transformingObservables.O1Map" />
+        <activity android:name=".guide.operators.transformingObservables.O2MapEmitingDiffrentType" />
+        <activity android:name=".guide.operators.O3From" />
+        <activity android:name=".guide.operators.O4Buffers" />
+        <activity android:name=".guide.operators.O5Debounce" />
+        <activity android:name=".guide.network.RetrofitActivity" />
+        <activity android:name=".guide.operators.transformingObservables.FlatmapVsConcatmapFragment"
             android:label="@string/flatmap_concatmap"/>
     </application>
 

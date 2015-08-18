@@ -3,22 +3,24 @@ package com.rx;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.rx.basic.RxAndroidPart1;
-import com.rx.basic.RxAndroidPart2UsingAction1;
-import com.rx.basic.RxAndroidPart3UsingLambda;
-import com.rx.basic.RxAndroidPart4UsingChaining;
-import com.rx.dagger.component.BaseComponent;
-import com.rx.dagger.component.DaggerDependenciesExampleComponent;
-import com.rx.dagger.module.DependenciesExampleModule;
-import com.rx.lifecycle.LeakingActivity;
-import com.rx.lifecycle.LifecycleActivity;
-import com.rx.network.RetrofitActivity;
-import com.rx.operators.transformingObservables.FlatmapVsConcatmap;
-import com.rx.operators.transformingObservables.O1Map;
-import com.rx.operators.transformingObservables.O2MapEmitingDiffrentType;
-import com.rx.operators.O3From;
-import com.rx.operators.O4Buffers;
-import com.rx.operators.O5Debounce;
+import com.rx.common.app.BaseApplication;
+import com.rx.common.injection.component.BaseComponent;
+import com.rx.common.injection.component.DaggerDependenciesExampleComponent;
+import com.rx.common.injection.module.DependenciesExampleModule;
+import com.rx.guide.base.BaseActivity;
+import com.rx.guide.basic.RxAndroidPart1;
+import com.rx.guide.basic.RxAndroidPart2UsingAction1;
+import com.rx.guide.basic.RxAndroidPart3UsingLambda;
+import com.rx.guide.basic.RxAndroidPart4UsingChaining;
+import com.rx.guide.lifecycle.LeakingActivity;
+import com.rx.guide.lifecycle.LifecycleActivity;
+import com.rx.guide.network.RetrofitActivity;
+import com.rx.guide.operators.O3From;
+import com.rx.guide.operators.O4Buffers;
+import com.rx.guide.operators.O5Debounce;
+import com.rx.guide.operators.transformingObservables.FlatmapVsConcatmapFragment;
+import com.rx.guide.operators.transformingObservables.O1Map;
+import com.rx.guide.operators.transformingObservables.O2MapEmitingDiffrentType;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -99,6 +101,6 @@ public class TestActivity extends BaseActivity {
 
     @OnClick(R.id.flatmap)
     void flatmap() {
-        startActivity(new Intent(this, FlatmapVsConcatmap.class));
+        startActivity(new Intent(this, FlatmapVsConcatmapFragment.class));
     }
 }

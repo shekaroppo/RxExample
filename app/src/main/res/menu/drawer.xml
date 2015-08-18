@@ -2,15 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/toolbarLayout"
+            android:id="@+id/operators"
             android:checked="true"
-            android:title="@string/drawer.menu.Operators" />
+            android:title="@string/drawer.operators" />
         <item
-            android:id="@+id/tabLayout"
-            android:title="@string/tabLayout" />
-        <item
-            android:id="@+id/percentRelativeLayout"
-            android:title="@string/percent_relative_layout" />
-
+            android:id="@+id/lifecycle"
+            android:title="@string/drawer.lifecycle" />
     </group>
 </menu>

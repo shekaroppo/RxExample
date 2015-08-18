@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">RxExample</string>
     <string name="action_settings">Settings</string>
+    <string name="navigation_drawer_open" translatable="false" />
+    <string name="navigation_drawer_close" translatable="false" />
 
     <!--Basic Strings-->
     <string name="basic">Basic</string>
@@ -46,7 +48,8 @@
     <string name="string_sample_observable_transformation">See the difference between flatMap() and concatMap() whereas one take care of the order and the other does not.</string>
 
 
-    <string name="drawer.Operators">Operators</string>
-    <string name="drawer.Lifecycle">Lifecycle</string>
+    <string name="drawer.operators">Operators</string>
+    <string name="drawer.lifecycle">Lifecycle</string>
+    <string name="class.title.flatmapvsconcatmap">FlatmapVsConcatmap</string>
 
 </resources>

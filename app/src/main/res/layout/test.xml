@@ -41,14 +41,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/chaining" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="4dp"
-            android:gravity="center"
-            android:background="@color/abc_search_url_text_normal"
-            android:text="@string/lifecycle" />
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="4dp"-->
+            <!--android:gravity="center"-->
+            <!--android:background="@color/abc_search_url_text_normal"-->
+            <!--android:text="@string/lifecycle" />-->
         <Button
             android:id="@+id/leaking_subscription"
             android:layout_width="match_parent"
