@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,8 +13,8 @@ import com.rx.common.app.BaseApplication;
 import com.rx.common.injection.component.BaseComponent;
 import com.rx.common.injection.component.DaggerDependenciesExampleComponent;
 import com.rx.common.injection.module.DependenciesExampleModule;
-import com.rx.guide.base.BaseActivity;
 import com.rx.common.utils.NavigationManager;
+import com.rx.guide.base.BaseActivity;
 
 import javax.inject.Inject;
 
@@ -23,6 +24,8 @@ import butterknife.ButterKnife;
 public class MainActivity extends BaseActivity implements DrawerLayout.DrawerListener
         , NavigationView.OnNavigationItemSelectedListener {
 
+    @Bind(R.id.toolbar)
+    Toolbar mToolbar;
     @Inject
     NavigationManager mNavigationManager;
     @Bind(R.id.drawer_layout)
@@ -40,10 +43,11 @@ public class MainActivity extends BaseActivity implements DrawerLayout.DrawerLis
         ButterKnife.bind(this);
         BaseComponent component = BaseApplication.getComponent(this);
         DaggerDependenciesExampleComponent.builder()
-                .dependenciesExampleModule(new DependenciesExampleModule())
+                .dependenciesExampleModule(new DependenciesExampleModule(this))
                 .baseComponent(component)
                 .build().inject(this);
         setupNavDrawer();
+        setupToolbar("Home");
         if(savedInstanceState==null){
             mNavigationManager.setRootContainer(R.id.container);
             mNavigationManager.goToFlatmapVsConcatmapFragment(true);
@@ -56,7 +60,20 @@ public class MainActivity extends BaseActivity implements DrawerLayout.DrawerLis
         // Sync the toggle state after onRestoreInstanceState has occurred.
         mDrawerToggle.syncState();
     }
-
+    protected void setupToolbar(String title) {
+        setSupportActionBar(mToolbar);
+        mToolbar.setTitle(title);
+        mToolbar.setNavigationIcon(R.drawable.ic_menu);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDrawer();
+            }
+        });
+    }
+    public Toolbar getToolbar() {
+        return mToolbar;
+    }
     private void setupNavDrawer() {
         mDrawerLayout.setDrawerListener(this);
         mDrawerToggle = new ActionBarDrawerToggle(this

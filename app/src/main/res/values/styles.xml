@@ -1,9 +1,13 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="BaseTheme">
     </style>
+
+    <!-- This is the generated app theme -->
+    <style name="BaseTheme" parent="Theme.AppCompat.NoActionBar">
+
+    </style>
+
     <style name="AppTheme.TextViewTitle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

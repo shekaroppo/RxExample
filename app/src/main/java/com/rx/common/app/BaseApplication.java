@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.rx.common.injection.component.BaseComponent;
-import com.rx.common.dagger.component.DaggerBaseComponent;
+import com.rx.common.injection.component.DaggerBaseComponent;
 import com.rx.common.injection.module.BaseModule;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;

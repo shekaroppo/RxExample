@@ -44,7 +44,7 @@ public class FlatmapVsConcatmapFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setupToolbar(getString(R.string.class_title_flatmapvsconcatmap));
+        setToolbarTitle(getString(R.string.class_title_flatmapvsconcatmap));
         jobExecutor = JobExecutor.getInstance();
         populateData();
     }
@@ -116,4 +116,5 @@ public class FlatmapVsConcatmapFragment extends BaseFragment {
     private void showToast(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
+
 }

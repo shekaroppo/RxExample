@@ -1,5 +1,9 @@
 package com.rx.common.injection.module;
 
+import android.support.v7.app.AppCompatActivity;
+
+import com.rx.common.injection.scope.ActivityScope;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -8,8 +12,15 @@ import dagger.Provides;
  */
 @Module
 public class DependenciesExampleModule {
+    private final AppCompatActivity activity;
+
+    public DependenciesExampleModule(AppCompatActivity activity) {
+        this.activity = activity;
+    }
+
     @Provides
-    String provideName() {
-        return "Shekar";
+    @ActivityScope
+    AppCompatActivity activity() {
+        return activity;
     }
 }
