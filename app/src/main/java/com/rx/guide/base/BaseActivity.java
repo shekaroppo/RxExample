@@ -3,7 +3,7 @@ package com.rx.guide.base;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.rx.common.app.BaseApplication;
+import com.rx.BaseApplication;
 import com.squareup.leakcanary.RefWatcher;
 
 public abstract class BaseActivity extends AppCompatActivity {

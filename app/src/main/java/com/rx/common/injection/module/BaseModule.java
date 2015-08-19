@@ -1,6 +1,6 @@
 package com.rx.common.injection.module;
 
-import com.rx.common.app.BaseApplication;
+import com.rx.BaseApplication;
 
 import dagger.Module;
 import dagger.Provides;

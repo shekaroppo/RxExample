@@ -4,8 +4,11 @@
     </style>
 
     <!-- This is the generated app theme -->
-    <style name="BaseTheme" parent="Theme.AppCompat.NoActionBar">
-
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorPrimaryDark">@android:color/holo_blue_bright</item>
+        <item name="colorAccent">#FF4081</item>
+        <item name="android:windowBackground">@color/window_background</item>
     </style>
 
     <style name="AppTheme.TextViewTitle">

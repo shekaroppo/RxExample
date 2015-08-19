@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="window_background">#FFF5F5F5</color>
+    <color name="foreground_material_light">#f6f2f2</color>
+    <color name="black">#c12323</color>
+</resources>

@@ -3,7 +3,7 @@
 //import android.content.Intent;
 //import android.os.Bundle;
 //
-//import com.rx.common.app.BaseApplication;
+//import com.rx.BaseApplication;
 //import com.rx.common.injection.component.BaseComponent;
 //import com.rx.common.injection.component.DaggerDependenciesExampleComponent;
 //import com.rx.common.injection.module.DependenciesExampleModule;

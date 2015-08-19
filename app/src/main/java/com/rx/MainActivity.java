@@ -9,7 +9,6 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.rx.common.app.BaseApplication;
 import com.rx.common.injection.component.BaseComponent;
 import com.rx.common.injection.component.DaggerDependenciesExampleComponent;
 import com.rx.common.injection.module.DependenciesExampleModule;
@@ -47,7 +46,7 @@ public class MainActivity extends BaseActivity implements DrawerLayout.DrawerLis
                 .baseComponent(component)
                 .build().inject(this);
         setupNavDrawer();
-        setupToolbar("Home");
+        setupToolbar();
         if(savedInstanceState==null){
             mNavigationManager.setRootContainer(R.id.container);
             mNavigationManager.goToFlatmapVsConcatmapFragment(true);
@@ -60,9 +59,8 @@ public class MainActivity extends BaseActivity implements DrawerLayout.DrawerLis
         // Sync the toggle state after onRestoreInstanceState has occurred.
         mDrawerToggle.syncState();
     }
-    protected void setupToolbar(String title) {
+    protected void setupToolbar() {
         setSupportActionBar(mToolbar);
-        mToolbar.setTitle(title);
         mToolbar.setNavigationIcon(R.drawable.ic_menu);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.rx.common.app.BaseApplication;
+import com.rx.BaseApplication;
 import com.rx.R;
 import com.rx.guide.base.BaseActivity;
 import com.rx.guide.network.adapter.ExampleAdapter;

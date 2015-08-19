@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:name=".common.app.BaseApplication"
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/rx"
         android:label="@string/app_name"
@@ -30,8 +30,7 @@
         <activity android:name=".guide.operators.O4Buffers" />
         <activity android:name=".guide.operators.O5Debounce" />
         <activity android:name=".guide.network.RetrofitActivity" />
-        <activity android:name=".guide.operators.transformingObservables.FlatmapVsConcatmapFragment"
-            android:label="@string/flatmap_concatmap"/>
+        <activity android:name="com.github.mmin18.layoutcast.ResetActivity" />
     </application>
 
 </manifest>
